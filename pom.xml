@@ -84,11 +84,6 @@
                             <directory>wiki/FitNesseRoot/files/screenshots/</directory>
                             <followSymlinks>false</followSymlinks>
                         </fileset>
-                        <fileset>
-                            <!-- On clean throw away plugins to prevent multiple version being present after update -->
-                            <directory>wiki/plugins</directory>
-                            <followSymlinks>false</followSymlinks>
-                        </fileset>
                     </filesets>
                 </configuration>
             </plugin>
