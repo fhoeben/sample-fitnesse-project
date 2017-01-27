@@ -250,5 +250,30 @@
                 <extraFailsafeListeners>,nl.hsac.fitnesse.junit.JUnitTeamcityReporter</extraFailsafeListeners>
             </properties>
         </profile>
+        <profile>
+            <id>delete-hsac-fitnesse-fixtures</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <configuration>
+                            <filesets>
+                                <fileset>
+                                    <directory>wiki</directory>
+                                    <followSymlinks>false</followSymlinks>
+                                    <includes>
+                                        <include>plugins.properties</include>
+                                        <include>plugins/**</include>
+                                        <include>webdrivers/**</include>
+                                        <include>FitNesseRoot/Hsac*/**</include>
+                                    </includes>
+                                </fileset>
+                            </filesets>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 </project>
