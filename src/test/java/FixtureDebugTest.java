@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
  * Test class to allow fixture code to be debugged.
  */
 @RunWith(HsacFitNesseRunner.class)
-@FitNesseRunner.Suite("HsacAcceptanceTests.SlimTests.BrowserTest.ClickByLabelOrButton")
+@FitNesseRunner.Suite("HsacAcceptanceTests.SlimTests.UtilityFixtures.MapFixtureTest")
 public class FixtureDebugTest {
 }
