@@ -199,6 +199,7 @@
                                     <classifier>standalone</classifier>
                                     <type>zip</type>
                                     <overWrite>false</overWrite>
+                                    <excludes>fixtures/nl/**,fixtures/templates/**</excludes>
                                 </artifactItem>
                             </artifactItems>
                             <outputDirectory>${project.basedir}/wiki</outputDirectory>
