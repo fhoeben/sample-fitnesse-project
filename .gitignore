@@ -19,7 +19,6 @@ properties
 wiki/FitNesseRoot/Hsac*
 wiki/fixtures/
 wiki/webdrivers/
-wiki/plugins.properties
 **/*.log
 wiki/FitNesseRoot/files/fileFixture
 wiki/FitNesseRoot/files/test
