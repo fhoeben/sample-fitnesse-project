@@ -203,8 +203,28 @@
                 </artifactItem>
               </artifactItems>
               <overWriteIfNewer>false</overWriteIfNewer>
-              <excludes>fixtures/nl/**,fixtures/templates/**</excludes>
+              <excludes>fixtures/nl/**,fixtures/templates/**,FitNesseRoot/FrontPage/**,plugins.properties</excludes>
               <outputDirectory>${project.basedir}/wiki</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-hsac-baseline-if-not-present</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>nl.hsac</groupId>
+                  <artifactId>hsac-fitnesse-fixtures</artifactId>
+                  <version>${hsac.fixtures.version}</version>
+                  <classifier>standalone</classifier>
+                  <type>zip</type>
+                </artifactItem>
+              </artifactItems>
+              <includes>FitNesseRoot/FrontPage/**,plugins.properties</includes>
+              <outputDirectory>${project.basedir}/target/hsacDefaults</outputDirectory>
             </configuration>
           </execution>
           <execution>
@@ -213,6 +233,28 @@
             <goals>
               <goal>copy-dependencies</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>copy-hsacDefaults-if-not-present-in-wiki</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/target/hsacDefaults</directory>
+                </resource>
+              </resources>
+              <overwrite>false</overwrite>
+              <outputDirectory>${project.basedir}/wiki</outputDirectory>
+            </configuration>
           </execution>
         </executions>
       </plugin>
