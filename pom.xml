@@ -200,10 +200,10 @@
                   <version>${hsac.fixtures.version}</version>
                   <classifier>standalone</classifier>
                   <type>zip</type>
-                  <overWrite>false</overWrite>
-                  <excludes>fixtures/nl/**,fixtures/templates/**</excludes>
                 </artifactItem>
               </artifactItems>
+              <overWriteIfNewer>false</overWriteIfNewer>
+              <excludes>fixtures/nl/**,fixtures/templates/**</excludes>
               <outputDirectory>${project.basedir}/wiki</outputDirectory>
             </configuration>
           </execution>
