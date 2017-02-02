@@ -1,0 +1,15 @@
+---
+Static
+Suite: no
+---
+
+
+|import                            |
+|nl.hsac.fitnesse.fixture          |
+|nl.hsac.fitnesse.fixture.slim     |
+|nl.hsac.fitnesse.fixture.slim.web |
+|nl.rabobank.gict.mcv.fitnesse|
+|nl.rabobank.gict.mcv.fitnesse.stub|
+
+!|script         |selenium driver setup                                 |
+|start driver for|chrome                                                |

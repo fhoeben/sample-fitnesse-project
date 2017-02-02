@@ -1,0 +1,19 @@
+---
+Test
+---
+|script|browser test|
+|open|file:///C:/GIT/test/index.html|
+|click|Selecteer een tenaamstelling|
+|click|Option 1|
+|enter|Geweldige software|as|Omschrijving rekening|
+|enter|NL24ABNA0474373002|as|Tegenrekeningnummer|
+|click|Taalinstelling overeenkomst|
+|click|Nederlands|
+|click|Volgende|
+|click|Informatieproduct toevoegen|
+|click|Selecteer een informatieproduct|
+|click|id=informatieproduct_rekeningafschrift|
+|click|Ok|
+|click|Volgende|
+|click|Volgende|
+|click|Bevestigen|
