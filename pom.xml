@@ -276,6 +276,7 @@
                                         <include>plugins.properties</include>
                                         <include>plugins/**</include>
                                         <include>webdrivers/**</include>
+                                        <include>FitNesseRoot/Hsac*.wiki</include>
                                         <include>FitNesseRoot/Hsac*/**</include>
                                     </includes>
                                 </fileset>
