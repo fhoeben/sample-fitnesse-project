@@ -1,0 +1,18 @@
+---
+Help: Defines where to look for fixture code, and ensures browser is started.
+---
+This set up page is executed once, before any tests in this suite.
+In it we configure which Java packages contain the logic for our fixtures, which browser we want to use for Selenium tests and we start this browser.
+This means we do not have to do this in every test, which means easier maintenance and better performance.
+
+Stopping the browser is done in SuiteTearDown, which is done after all tests in this suite are completed.
+
+!include -c .MyTestSuite.SuiteSetUp
+
+|Import                           |
+|nl.hsac.fitnesse.fixture.slim.web|
+
+
+|script          |selenium driver setup|
+|start driver for|chrome               |
+|show            |driver description   |
