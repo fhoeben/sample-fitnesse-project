@@ -1,0 +1,7 @@
+---
+Suite
+Help: Suite for tests on services (i.e. tests that do not require a browser to be started)
+---
+!contents -R2 -g -p -f -h
+
+Samples for testing services can be found at .HsacExamples.SlimTests.HttpTests.

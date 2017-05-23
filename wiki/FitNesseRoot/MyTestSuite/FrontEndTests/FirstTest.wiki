@@ -1,0 +1,14 @@
+Boilerplate Selenium web application test, customize to your heart's desire.
+
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+|script|browser test                                    |
+|open  |http://www.funda.nl                             |
+|select|€ 1.000.000        |for|Van                     |
+|select|€ 2.000.000        |for|Tot                     |
+|enter |Groenedijk, Utrecht|as |Plaats, buurt, adres etc|
+|note  |select option from autocomplete                 |
+|wait  |1                  |seconds                     |
+|press |down                                            |
+|press |enter                                           |
+|click |Zoek                                            |
