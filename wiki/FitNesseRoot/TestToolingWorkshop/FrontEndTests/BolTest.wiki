@@ -1,0 +1,10 @@
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+|script|browser test                                                |
+|open  |http://bol.com                                              |
+|enter |Harry Potter   |as                |Waar ben je naar op zoek?|
+|click |Harry Potter and the Cursed Child                           |
+|click |In winkelwagen                                              |
+|click |bestellen                                                   |
+|check |value of       |id=tst_total_price|€ 18,98                  |
+|show  |take screenshot|winkelwagen                                 |

@@ -1,0 +1,16 @@
+---
+Test
+---
+To introduce Slim's script table we use a simple example:
+
+|script             |login test fixture                                       |
+|login with username|Bob                     |and password|secret             |
+|check              |number of login attempts|1                               |
+|reject             |login with username     |Fried       |and password|secret|
+|show               |number of login attempts                                 |
+
+The contents of the class used in this sample is quite simple, as the next script will show...
+
+!|script      |file fixture                    |
+|set directory|../src/main/java                |
+|show         |content of|LoginTestFixture.java|

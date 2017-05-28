@@ -1,0 +1,58 @@
+In this test we will fill in a form and afterwards check that our responses have been properly recorded.
+To ensure we check the right results we will use a random name, which we will later use to filter the response from this test run from all responses received.
+
+We define a random name, and comment.
+
+|script     |string fixture                  |
+|$myName=   |value of|!randomString (5)      |
+|$myComment=|value of|More !randomString (10)|
+
+
+!define FORM_UID {fdx32Y}
+
+|storyboard      |browser test                                          |
+|open            |https://fhoeben.typeform.com/to/${FORM_UID}           |
+|click           |Start                                                 |
+|type            |$myName                                               |
+|press           |enter                                                 |
+|type            |example.com                                           |
+|click           |Ok                                                    |
+|type            |A                                                     |
+|wait for visible|How often do you write automated tests?               |
+|type            |9                                                     |
+|wait for visible|could you share your email address with us?           |
+|type            |test@example.com                                      |
+|press           |enter                                                 |
+|type            |4                                                     |
+|wait for visible|Will you be staying for the afterparty?               |
+|type            |A                                                     |
+|wait for visible|Do you have any comments or suggestions for the event?|
+|type            |$myComment                                            |
+|press           |enter                                                 |
+|click           |Register!                                             |
+|wait for visible|Thanks for completing this typeform                   |
+|click           |Create a typeform                                     |
+
+
+!define API_KEY {96a5b83b3cfb12c128fa62debeb9dfb51d96a59e}
+
+|script   |json http test                   |
+|set value|${API_KEY}     |for|key          |
+|get from |https://api.typeform.com/v1/forms|
+|check    |response status|200              |
+|show     |response                         |
+
+|script         |json http test                                                                                                                              |
+|set value      |${API_KEY}     |for                      |key                                                                                               |
+|set value      |true           |for                      |completed                                                                                         |
+|set value      |10             |for                      |limit                                                                                             |
+|get from       |https://api.typeform.com/v1/form/${FORM_UID}                                                                                                |
+|check          |response status|200                                                                                                                         |
+|show           |response                                                                                                                                    |
+|show           |json path      |stats.responses.total                                                                                                       |
+|check          |json path      |stats.responses.completed|> 0                                                                                               |
+|check          |json path      |stats.responses.showing  |0 < _ <= 10                                                                                       |
+|$name_id=      |element        |0                        |of json path|questions[?(@.question=="What's your name?")].id                                     |
+|$suggestion_id=|element        |0                        |of json path|questions[?(@.question=="Do you have any comments or suggestions for the event?")].id|
+|check          |element        |0                        |of json path|responses[?(@.answers.$name_id=="$myName")].answers.$suggestion_id|$myComment        |
+

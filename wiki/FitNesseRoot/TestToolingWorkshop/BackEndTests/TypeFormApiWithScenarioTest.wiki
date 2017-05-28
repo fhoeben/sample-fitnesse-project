@@ -1,0 +1,18 @@
+This pages uses a scenario to create an abstraction over a complex json pah, and 3 different ways to call a scenario.
+
+!define FORM_UID {fdx32Y}
+
+!define API_KEY {96a5b83b3cfb12c128fa62debeb9dfb51d96a59e}
+
+|scenario|user _ suggested _|name, suggestion                                                                                    |
+|check   |element           |0|of json path|responses[?(@.answers.textfield_NqPs=="@{name}")].answers.textarea_QZgk|@{suggestion}|
+
+
+
+|script         |json http test                              |
+|set value      |${API_KEY}     |for          |key           |
+|get from       |https://api.typeform.com/v1/form/${FORM_UID}|
+|show           |response                                    |
+|user           |Fried          |suggested    |More beer!    |
+|user Fried suggested More beer!                             |
+|user suggested;|Fried          |More beer!                  |

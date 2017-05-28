@@ -1,0 +1,11 @@
+|scenario|validate total price is|price                      |
+|check   |value of               |id=tst_total_price|@{price}|
+
+
+|script                 |browser test                             |
+|open                   |http://bol.com                           |
+|enter                  |Harry Potter|as|Waar ben je naar op zoek?|
+|click                  |Harry Potter and the Cursed Child        |
+|click                  |In winkelwagen                           |
+|click                  |bestellen                                |
+|validate total price is|€ 18,98                                  |

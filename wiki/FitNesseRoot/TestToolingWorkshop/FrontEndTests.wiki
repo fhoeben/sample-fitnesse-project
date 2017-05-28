@@ -1,6 +1,6 @@
 ---
-Suite
 Help: Suite for tests on using a browser (with Selenium)
+Suite
 ---
 !contents -R2 -g -p -f -h
 

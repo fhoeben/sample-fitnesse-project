@@ -1,0 +1,12 @@
+!define FORM_UID {fdx32Y}
+
+!define API_KEY {96a5b83b3cfb12c128fa62debeb9dfb51d96a59e}
+
+|script   |json http test                                                                                                                         |
+|set value|${API_KEY}     |for                      |key                                                                                          |
+|get from |https://api.typeform.com/v1/form/${FORM_UID}                                                                                           |
+|check    |response status|200                                                                                                                    |
+|show     |response                                                                                                                               |
+|check    |json path      |stats.responses.completed|> 0                                                                                          |
+|check    |element        |0                        |of json path|responses[?(@.answers.textfield_NqPs=="Fried")].answers.textarea_QZgk|More beer!|
+
