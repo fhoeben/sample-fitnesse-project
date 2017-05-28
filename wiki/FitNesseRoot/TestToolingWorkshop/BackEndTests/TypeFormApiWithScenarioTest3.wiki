@@ -1,0 +1,36 @@
+---
+Help: Scenario to create decision table
+Test
+---
+This pages uses a scenario to create an abstraction retrieving the answers to a form, and another to find the suggestions per user.
+
+!*> scenarios
+
+|scenario |retrieve responses for  |form           |
+|set value|${API_KEY}              |for |key       |
+|set value|true                    |for |completed |
+|get from |https://api.typeform.com/v1/form/@{form}|
+|show     |response                                |
+
+|scenario|store id for question _ in _|question, var                                            |
+|$@{var}=|element                     |0|of json path|questions[?(@.question=="@{question}")].id|
+
+When used in decision table a table template can be nice alternative to scenario, as first row of definition does not need to contain all parameters.
+
+|table template       |check user's suggestion                                                                                                                  |
+|store id for question|What's your name?                                     |in|name_id                                                                        |
+|store id for question|Do you have any comments or suggestions for the event?|in|suggestion_id                                                                  |
+|$suggestion=         |element                                               |0 |of json path|responses[?(@.answers.$name_id=="@{name}")].answers.$suggestion_id|
+*!
+
+First a normal script retrieves the responses.
+
+|script                |json http test|
+|retrieve responses for|${FORM_UID}   |
+
+Then instead of checking the suggestion line by line, in a scenario, we can also create a decission table (aka 'thruth table').
+
+|check user's suggestion|
+|name  |suggestion?     |
+|Fried |More beer!      |
+|çQ±n; |More QA≤}NøxçZ! |

@@ -1,7 +1,10 @@
+---
+Help: Combination of front and backend test to validate input supplied is stored
+---
 In this test we will fill in a form and afterwards check that our responses have been properly recorded.
 To ensure we check the right results we will use a random name, which we will later use to filter the response from this test run from all responses received.
 
-We define a random name, and comment.
+We define a random name, and comment, which will be used in front and backend part of the test.
 
 |script     |string fixture                  |
 |$myName=   |value of|!randomString (5)      |
@@ -14,7 +17,7 @@ We define a random name, and comment.
 |type            |$myName                                               |
 |press           |enter                                                 |
 |type            |example.com                                           |
-|click           |Ok                                                    |
+|click           |OK                                                    |
 |type            |A                                                     |
 |wait for visible|How often do you write automated tests?               |
 |type            |9                                                     |
@@ -31,18 +34,27 @@ We define a random name, and comment.
 |wait for visible|Thanks for completing this typeform                   |
 |click           |Create a typeform                                     |
 
+!*> scenario's used to make json test readable
 
-|script         |json http test                                                                                                                              |
-|set value      |${API_KEY}     |for                      |key                                                                                               |
-|set value      |true           |for                      |completed                                                                                         |
-|set value      |10             |for                      |limit                                                                                             |
-|get from       |https://api.typeform.com/v1/form/${FORM_UID}                                                                                                |
-|check          |response status|200                                                                                                                         |
-|show           |response                                                                                                                                    |
-|show           |json path      |stats.responses.total                                                                                                       |
-|check          |json path      |stats.responses.completed|> 0                                                                                               |
-|check          |json path      |stats.responses.showing  |0 < _ <= 10                                                                                       |
-|$name_id=      |element        |0                        |of json path|questions[?(@.question=="What's your name?")].id                                     |
-|$suggestion_id=|element        |0                        |of json path|questions[?(@.question=="Do you have any comments or suggestions for the event?")].id|
-|check          |element        |0                        |of json path|responses[?(@.answers.$name_id=="$myName")].answers.$suggestion_id|$myComment        |
+|scenario|store id for question _ in _|question, var                                            |
+|$@{var}=|element                     |0|of json path|questions[?(@.question=="@{question}")].id|
+
+|scenario             |user _ suggested _                                    |name, suggestion                                                                                |
+|store id for question|What's your name?                                     |in|name_id                                                                                      |
+|store id for question|Do you have any comments or suggestions for the event?|in|suggestion_id                                                                                |
+|check                |element                                               |0 |of json path|responses[?(@.answers.$name_id=="@{name}")].answers.$suggestion_id|@{suggestion}|
+
+*!
+
+|script   |json http test                                       |
+|set value|${API_KEY}     |for                      |key        |
+|set value|true           |for                      |completed  |
+|set value|10             |for                      |limit      |
+|get from |https://api.typeform.com/v1/form/${FORM_UID}         |
+|check    |response status|200                                  |
+|show     |response                                             |
+|show     |json path      |stats.responses.total                |
+|check    |json path      |stats.responses.completed|> 0        |
+|check    |json path      |stats.responses.showing  |0 < _ <= 10|
+|user     |$myName        |suggested                |$myComment |
 

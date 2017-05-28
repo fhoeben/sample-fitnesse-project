@@ -1,0 +1,31 @@
+---
+Help: Nested usage of scenarios
+Test
+---
+This pages uses a scenario to create an abstraction retrieving the answers to a form, and another to find the suggestions per user.
+
+!*> scenarios
+
+|scenario |retrieve responses for  |form           |
+|set value|${API_KEY}              |for |key       |
+|set value|true                    |for |completed |
+|get from |https://api.typeform.com/v1/form/@{form}|
+|show     |response                                |
+
+|scenario|store id for question _ in _|question, var                                            |
+|$@{var}=|element                     |0|of json path|questions[?(@.question=="@{question}")].id|
+
+A scenario may call another scenario
+
+|scenario             |user _ suggested _                                    |name, suggestion                                                                                |
+|store id for question|What's your name?                                     |in|name_id                                                                                      |
+|store id for question|Do you have any comments or suggestions for the event?|in|suggestion_id                                                                                |
+|check                |element                                               |0 |of json path|responses[?(@.answers.$name_id=="@{name}")].answers.$suggestion_id|@{suggestion}|
+*!
+
+|script                |json http test                 |
+|retrieve responses for|${FORM_UID}                    |
+|user                  |Fried|suggested|More beer!     |
+|user                  |çQ±n;|suggested|More QA≤}NøxçZ!|
+
+Alternative scenario usage is shown in TypeFormApiWithScenarioTest3
