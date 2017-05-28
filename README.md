@@ -1,6 +1,10 @@
 This testing project uses the FitNesse baseline provided by [hsac-fitnesse-fixtures](https://github.com/fhoeben/hsac-fitnesse-fixtures).
 It offers a web environment (wiki) to define and run tests. 
 
+This branch replaces the standard empty boilerplate project with some sample test content for a workshop to introduce the 
+hsac-fitnesse-fixtures project. These tests can be found at: 
+[http://localhost:9090/TestToolingWorkshop](http://localhost:9090/TestToolingWorkshop). 
+
 ## Baseline Features
 The hsac-fitnesse-fixtures aim to assist in testing (SOAP) web services and web applications (using Selenium) minimizing the amount of (custom) Java code needed to define tests.
 
@@ -23,10 +27,6 @@ To start the wiki locally execute: `mvn clean compile exec:exec`, it can then be
 
 More details on the features of hsac-fitnesse-fixtures, and example tests, can then be accessed at 
 [http://localhost:9090/HsacExamples](http://localhost:9090/HsacExamples).
-
-An empty ('template' or 'boilerplate') test suite, to give you a flying start creating your own test suite, can be found at 
-[http://localhost:9090/MyTestSuite](http://localhost:9090/MyTestSuite). All basic setup has been taken care of, 
-so you can start defining your own tests in this suite immediately. 
 
 ## Upgrading
 
