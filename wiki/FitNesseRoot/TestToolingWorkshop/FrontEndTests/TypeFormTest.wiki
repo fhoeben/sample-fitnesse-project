@@ -8,8 +8,6 @@ We define a random name, and comment.
 |$myComment=|value of|More !randomString (10)|
 
 
-!define FORM_UID {fdx32Y}
-
 |storyboard      |browser test                                          |
 |open            |https://fhoeben.typeform.com/to/${FORM_UID}           |
 |click           |Start                                                 |
@@ -33,14 +31,6 @@ We define a random name, and comment.
 |wait for visible|Thanks for completing this typeform                   |
 |click           |Create a typeform                                     |
 
-
-!define API_KEY {96a5b83b3cfb12c128fa62debeb9dfb51d96a59e}
-
-|script   |json http test                   |
-|set value|${API_KEY}     |for|key          |
-|get from |https://api.typeform.com/v1/forms|
-|check    |response status|200              |
-|show     |response                         |
 
 |script         |json http test                                                                                                                              |
 |set value      |${API_KEY}     |for                      |key                                                                                               |

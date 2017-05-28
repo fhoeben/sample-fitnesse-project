@@ -5,6 +5,11 @@ Test: no
 !contents -R2 -g -p -f -h
 
 
+Keys used when working with typeform.com
+
+!define FORM_UID {fdx32Y}
+!define API_KEY {96a5b83b3cfb12c128fa62debeb9dfb51d96a59e}
+
 !*> Basic setup for tests with Slim
 Workaround for https://github.com/unclebob/fitnesse/issues/989
 !define slim.port {0}
