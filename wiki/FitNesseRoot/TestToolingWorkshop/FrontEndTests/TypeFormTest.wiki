@@ -36,6 +36,14 @@ We define a random name, and comment, which will be used in front and backend pa
 
 !*> scenario's used to make json test readable
 
+|scenario |retrieve responses for  |form           |
+|set value|${API_KEY}              |for |key       |
+|set value|true                    |for |completed |
+|set value|50                      |for |limit     |
+|get from |https://api.typeform.com/v1/form/@{form}|
+|check    |response status         |200            |
+|show     |response                                |
+
 |scenario|store id for question _ in _|question, var                                            |
 |$@{var}=|element                     |0|of json path|questions[?(@.question=="@{question}")].id|
 
@@ -46,15 +54,10 @@ We define a random name, and comment, which will be used in front and backend pa
 
 *!
 
-|script   |json http test                                       |
-|set value|${API_KEY}     |for                      |key        |
-|set value|true           |for                      |completed  |
-|set value|10             |for                      |limit      |
-|get from |https://api.typeform.com/v1/form/${FORM_UID}         |
-|check    |response status|200                                  |
-|show     |response                                             |
-|show     |json path      |stats.responses.total                |
-|check    |json path      |stats.responses.completed|> 0        |
-|check    |json path      |stats.responses.showing  |0 < _ <= 10|
-|user     |$myName        |suggested                |$myComment |
+|script                |json http test                                 |
+|retrieve responses for|${FORM_UID}                                    |
+|show                  |json path|stats.responses.total                |
+|check                 |json path|stats.responses.completed|> 0        |
+|check                 |json path|stats.responses.showing  |0 < _ <= 50|
+|user                  |$myName  |suggested                |$myComment |
 
