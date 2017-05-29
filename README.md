@@ -21,6 +21,9 @@ wiki installation](http://localhost:9090/HsacExamples) (see instructions below o
 ## Running Locally
 To start the wiki locally execute: `mvn clean compile exec:exec`, it can then be accessed at [http://localhost:9090/](http://localhost:9090/).
 
+*Please note*: after running this command for the first time on macOS (or OS-X), you need to set the execute permission 
+on the Selenium webdrivers `chmod +x wiki/webdrivers/*`, 
+
 More details on the features of hsac-fitnesse-fixtures, and example tests, can then be accessed at 
 [http://localhost:9090/HsacExamples](http://localhost:9090/HsacExamples).
 
@@ -36,7 +39,7 @@ To upgrade to newer version of the hsac-fitnesse-fixtures project:
 * stop all selenium webdrivers that might be running
 * upgrade `hsac.fixtures.version` property in `pom.xml`
 * run `mvn clean -Pdelete-hsac-fitnesse-fixtures`
-* start as normal
+* start as normal (on macOS the execute permission on the webdrivers may need to be set again)
 
 Upgrade FitNesse version used:
 
