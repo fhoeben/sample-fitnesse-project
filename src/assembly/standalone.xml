@@ -35,6 +35,7 @@
             <includes>
                 <include>webdrivers/*.exe</include>
                 <include>webdrivers/*.version</include>
+                <include>*/**</include>
             </includes>
             <excludes>
                 <exclude>copy/**</exclude>
