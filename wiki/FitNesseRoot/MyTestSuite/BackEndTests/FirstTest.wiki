@@ -1,0 +1,10 @@
+Boilerplate service test, customize to your heart's desire.
+
+|script         |xml http test                                                       |
+|set value      |90210          |for                  |ZIP                           |
+|get from       |http://wsf.cdyne.com/WeatherWS/Weather.asmx/GetCityWeatherByZIP                                          |
+|check          |response status|200                                                 |
+|show           |request                                                             |
+|show           |response                                                            |
+|register prefix|weather        |for namespace        |http://ws.cdyne.com/WeatherWS/|
+|check          |xPath          |//weather:City/text()|Beverly Hills                 |

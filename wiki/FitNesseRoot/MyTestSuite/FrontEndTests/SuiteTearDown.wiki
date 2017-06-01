@@ -1,0 +1,8 @@
+---
+Help: Stops browser after tests complete.
+---
+This set up page is executed once, after all tests in this suite.
+
+|script|selenium driver setup|
+|show  |run summary          |
+|stop driver                 |
