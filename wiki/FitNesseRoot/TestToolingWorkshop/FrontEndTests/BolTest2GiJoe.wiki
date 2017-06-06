@@ -1,0 +1,12 @@
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+This checks finds the budget of a movie in bol.com's product specifications.
+
+|script   |browser test                                                |
+|open     |http://bol.com                                              |
+|enter    |G.I. Joe: The Rise Of Cobra|as    |Waar ben je naar op zoek?|
+|press    |enter                                                       |
+|click    |G.I. Joe: The Rise Of Cobra                                 |
+|scroll to|Alle productspecificaties                                   |
+|click    |Toon meer                                                   |
+|check    |value of                   |Budget|$ 175.000.000            |

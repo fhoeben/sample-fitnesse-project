@@ -1,0 +1,13 @@
+---
+Test
+---
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+Navigate to the sunglasses section of bol.com.
+
+|script    |browser test                |
+|open      |http://bol.com              |
+|hover over|Categorieën                 |
+|hover over|Sieraden & Accessoires      |
+|click     |Zonnebrillen                |
+|show      |take screenshot|zonnebrillen|

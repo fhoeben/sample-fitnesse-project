@@ -1,0 +1,14 @@
+---
+Test
+---
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+This test checks the difference in naming of a kitchen appliance between Dutch en Flemish.
+
+|storyboard       |browser test                                                   |
+|set browser width|1200                                                           |
+|open             |https://www.bol.com/nl/m/elektronica/keukenapparaten/index.html|
+|ensure           |is visible               |Magnetrons & Ovens                   |
+|click            |NL                                                             |
+|click            |België                                                         |
+|ensure           |is visible               |Microgolfovens & Ovens               |
