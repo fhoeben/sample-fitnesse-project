@@ -6,9 +6,9 @@ To ensure we check the right results we will use a random name, which we will la
 
 We define a random name, and comment, which will be used in front and backend part of the test.
 
-|script     |string fixture                  |
-|$myName=   |value of|!randomString (5)      |
-|$myComment=|value of|More !randomString (10)|
+|script     |string fixture                                                                     |
+|$myName=   |value of|!randomString (10) (abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ)|
+|$myComment=|value of|More !randomString (20) (abcdefghijklmnopqrstuvwxyz ä∆©>z@¶≤-)            |
 
 
 |storyboard      |browser test                                          |
