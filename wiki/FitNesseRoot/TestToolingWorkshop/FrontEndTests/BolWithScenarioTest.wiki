@@ -1,3 +1,10 @@
+---
+Test
+---
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+This test uses a scenario table to encapsulate the way the element containing a shopping cart's total price is found.
+
 |scenario|validate total price is|price                      |
 |check   |value of               |id=tst_total_price|@{price}|
 
@@ -8,4 +15,4 @@
 |click                  |Harry Potter and the Cursed Child        |
 |click                  |In winkelwagen                           |
 |click                  |bestellen                                |
-|validate total price is|€ 18,98                                  |
+|validate total price is|€ 21,98                                  |
