@@ -9,8 +9,28 @@ To introduce Slim's script table we use a simple example:
 |reject             |login with username     |Fried       |and password|secret|
 |show               |number of login attempts                                 |
 
-The contents of the class used in this sample is quite simple, as the next script will show...
+The contents of the class used in this sample is quite simple, as the next script will show in full development setup...
 
 !|script      |file fixture                    |
 |set directory|../src/main/java                |
 |show         |content of|LoginTestFixture.java|
+
+In the standalone.zip the Java source is not included (only the compiled version), so to ensure everyone sees it I also copied its current contents here in the wiki
+{{{
+/**
+ * Fixture to explain script table. Simplified from FitNesse's LoginDialogDriver.
+ */
+public class LoginTestFixture {
+    private int counter;
+
+    public boolean loginWithUsernameAndPassword(String username, String password) {
+        counter = counter + 1;
+        return "Bob".equals(username)
+                && "secret".equals(password);
+    }
+
+    public int numberOfLoginAttempts() {
+        return counter;
+    }
+}
+}}}
