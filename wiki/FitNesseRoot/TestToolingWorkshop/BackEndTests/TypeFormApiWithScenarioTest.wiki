@@ -1,5 +1,6 @@
 ---
 Help: Scenarios allow tests to give complex commands descriptive names
+Test
 ---
 This pages uses a scenario to create an abstraction over a complex json pah, and 3 different ways to call a scenario.
 
