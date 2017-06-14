@@ -1,0 +1,11 @@
+---
+Test
+---
+
+|script   |json http test                                                                                                                   |
+|set value|${RIJKS_API_KEY}|for            |key                                                                                             |
+|set value|json            |for            |format                                                                                          |
+|get from |https://www.rijksmuseum.nl/api/nl/collection/sk-c-5                                                                              |
+|check    |response status |200                                                                                                             |
+|show     |response                                                                                                                         |
+|check    |json path       |artObject.title|Schutters van wijk II onder leiding van kapitein Frans Banninck Cocq, bekend als de ‘Nachtwacht’|
