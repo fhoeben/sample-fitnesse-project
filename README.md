@@ -24,6 +24,10 @@ To start the wiki locally execute: `mvn clean compile exec:exec`, it can then be
 More details on the features of hsac-fitnesse-fixtures, and example tests, can then be accessed at 
 [http://localhost:9090/HsacExamples](http://localhost:9090/HsacExamples).
 
+An empty ('template' or 'boilerplate') test suite, to give you a flying start creating your own test suite, can be found at 
+[http://localhost:9090/MyTestSuite](http://localhost:9090/MyTestSuite). All basic setup has been taken care of, 
+so you can start defining your own tests in this suite immediately. 
+
 ## Upgrading
 
 To upgrade to newer version of the hsac-fitnesse-fixtures project:
