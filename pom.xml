@@ -43,6 +43,11 @@
             <artifactId>hsac-fitnesse-fixtures</artifactId>
             <version>${hsac.fixtures.version}</version>
         </dependency>
+        <dependency>
+            <groupId>nl.hsac</groupId>
+            <artifactId>hsac-xebium-bridge</artifactId>
+            <version>0.5.0</version>
+        </dependency>
 
         <!-- Testing -->
         <dependency>

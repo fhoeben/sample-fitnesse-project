@@ -1,0 +1,13 @@
+---
+Help: Sample test using hsac-xebium-bridge
+---
+Boilerplate Selenium web application test using Xebium syntax in combination with [[hsac-xebium-bridge][https://github.com/fhoeben/hsac-xebium-bridge]], customize to your heart's desire.
+
+The configuration of Selenium (i.e. which browser to use) and starting the browser session is done in the SuiteSetup. Which allows this configuration to be shared between tests. Closing the browser is done in SuiteTearDown, which happens after all tests are completed.
+
+
+|import                                  |
+|nl.hsac.fitnesse.fixture.slim.web.xebium|
+
+|script       |hsac selenium driver fixture    |
+|start browser|chrome|on url|https://google.com|
