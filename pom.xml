@@ -18,7 +18,7 @@
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
-        <extraFailsafeListeners></extraFailsafeListeners>
+        <extraFailsafeListeners>,nl.hsac.fitnesse.junit.JUnitXMLPerPageListener</extraFailsafeListeners>
     </properties>
 
     <dependencyManagement>
@@ -125,7 +125,7 @@
                         <property>
                             <name>listener</name>
                             <value>
-                                nl.hsac.fitnesse.junit.JUnitXMLPerPageListener,nl.hsac.fitnesse.junit.ProgressLoggerListener${extraFailsafeListeners}
+                                nl.hsac.fitnesse.junit.ProgressLoggerListener${extraFailsafeListeners}
                             </value>
                         </property>
                     </properties>
