@@ -1,5 +1,6 @@
 target/
 .idea/
+.allure/
 *.iml
 wiki/fitnesse-standalone.jar
 wiki/plugins/hsac-fitnesse-plugin-*.jar
