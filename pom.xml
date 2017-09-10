@@ -332,7 +332,7 @@
             <id>allure</id>
             <properties>
                 <allure.report.directory>${project.build.directory}/allure-report</allure.report.directory>
-                <extraFailsafeListeners>,nl.hsac.fitnesse.junit.allure.JUnitAllureFrameworkListener</extraFailsafeListeners>
+                <extraFailsafeListeners>,nl.hsac.fitnesse.junit.JUnitXMLPerPageListener,nl.hsac.fitnesse.junit.allure.JUnitAllureFrameworkListener</extraFailsafeListeners>
             </properties>
             <dependencies>
                 <dependency>
