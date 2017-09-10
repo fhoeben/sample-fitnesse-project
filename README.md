@@ -43,3 +43,8 @@ Upgrade FitNesse version used:
 * stop FitNesse
 * upgrade `fitnesse.version` property in `pom.xml`
 * start as normal
+
+## Setting Up a Development Environment
+
+A description on how to set up a development environment to work based on this project can be found in the
+[hsac-fitnesse-fixtures' wiki](https://github.com/fhoeben/hsac-fitnesse-fixtures/wiki/Installation-guide).

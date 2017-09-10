@@ -14,11 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <fitnesse.version>20161106</fitnesse.version>
-        <hsac.fixtures.version>2.12.1</hsac.fixtures.version>
+        <hsac.fixtures.version>3.3.1</hsac.fixtures.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
-        <extraFailsafeListeners></extraFailsafeListeners>
+        <extraFailsafeListeners>,nl.hsac.fitnesse.junit.JUnitXMLPerPageListener</extraFailsafeListeners>
     </properties>
 
     <dependencyManagement>
@@ -61,8 +61,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
@@ -80,6 +80,7 @@
                                 <include>screenshots/**</include>
                                 <include>pagesources/**</include>
                                 <include>downloads/**</include>
+                                <include>galen-reports/**</include>
                             </includes>
                         </fileset>
                     </filesets>
@@ -124,13 +125,20 @@
                         <property>
                             <name>listener</name>
                             <value>
-                                nl.hsac.fitnesse.junit.JUnitXMLPerPageListener,nl.hsac.fitnesse.junit.ProgressLoggerListener${extraFailsafeListeners}
+                                nl.hsac.fitnesse.junit.ProgressLoggerListener${extraFailsafeListeners}
                             </value>
                         </property>
                     </properties>
                     <!-- Our listener will create XML failsafe should not, or all tests are reported twice -->
                     <disableXmlReport>true</disableXmlReport>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>2.20</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -254,6 +262,39 @@
     </build>
 
     <profiles>
+        <profile>
+            <id>mac</id>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>make-webdrivers-executable</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>/bin/bash</executable>
+                                    <arguments>
+                                        <argument>-c</argument>
+                                        <argument>chmod +x ${project.basedir}/wiki/webdrivers/*</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>teamCity</id>
             <properties>

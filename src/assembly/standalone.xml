@@ -19,6 +19,19 @@
             <directory>${project.basedir}/wiki</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <outputDirectory></outputDirectory>
+            <includes>
+                <include>webdrivers/*</include>
+            </includes>
+            <excludes>
+                <exclude>webdrivers/*.version</exclude>
+                <exclude>webdrivers/*.exe</exclude>
+            </excludes>
+            <fileMode>0755</fileMode>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/wiki</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory></outputDirectory>
             <excludes>
                 <exclude>copy/**</exclude>
                 <exclude>files/**</exclude>
@@ -36,6 +49,15 @@
                 <exclude>FitNesseRoot/updateList</exclude>
                 <exclude>FitNesseRoot/updateDoNotCopyOverList</exclude>
             </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/wiki</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>FitNesseRoot/files/httpPostExamples/**</include>
+                <include>FitNesseRoot/files/galenExamples/**</include>
+            </includes>
         </fileSet>
     </fileSets>
 </assembly> 
