@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <fitnesse.version>20161106</fitnesse.version>
-        <hsac.fixtures.version>3.3.2</hsac.fixtures.version>
+        <hsac.fixtures.version>3.4.1</hsac.fixtures.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
@@ -146,21 +146,31 @@
                 <version>1.5.0</version>
                 <executions>
                     <execution>
+                        <id>default-cli</id>
                         <goals>
                             <goal>exec</goal>
                         </goals>
+                        <configuration>
+                            <executable>java</executable>
+                            <workingDirectory>wiki</workingDirectory>
+                            <arguments>
+                                <argument>-jar</argument>
+                                <argument>fitnesse-standalone.jar</argument>
+                                <argument>-p</argument>
+                                <argument>${fitnesse.port}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>combine-reports</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>nl.hsac.fitnesse.junit.reportmerge.HtmlReportIndexGenerator</mainClass>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <executable>java</executable>
-                    <workingDirectory>wiki</workingDirectory>
-                    <arguments>
-                        <argument>-jar</argument>
-                        <argument>fitnesse-standalone.jar</argument>
-                        <argument>-p</argument>
-                        <argument>${fitnesse.port}</argument>
-                    </arguments>
-                </configuration>
             </plugin>
             <plugin>
                 <!-- Use dependency:copy-dependencies to copy all jar from dependencies to ${standalone.classpath},
