@@ -13,24 +13,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <fitnesse.version>20161106</fitnesse.version>
-        <hsac.fixtures.version>3.12.0</hsac.fixtures.version>
+        <fitnesse.version>20171210</fitnesse.version>
+        <hsac.fixtures.version>3.13.0</hsac.fixtures.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
         <extraFailsafeListeners>,nl.hsac.fitnesse.junit.JUnitXMLPerPageListener</extraFailsafeListeners>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- commons collections with important security fix (to overwrite Velocity's) -->
-            <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
-                <version>3.2.2</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.fitnesse</groupId>
