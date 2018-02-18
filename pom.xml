@@ -15,6 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <fitnesse.version>20180127</fitnesse.version>
         <hsac.fixtures.version>3.17.0</hsac.fixtures.version>
+        <surefire.version>2.20.1</surefire.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
@@ -78,7 +79,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                <version>${surefire.version}</version>
                 <configuration>
                     <excludes>
                         <!-- this test actually runs fitnesse tests
@@ -91,7 +92,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.20</version>
+                <version>${surefire.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -126,7 +127,7 @@
                     <dependency>
                         <groupId>org.apache.maven.surefire</groupId>
                         <artifactId>surefire-junit47</artifactId>
-                        <version>2.20</version>
+                        <version>${surefire.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
