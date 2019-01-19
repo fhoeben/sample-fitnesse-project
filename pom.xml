@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <fitnesse.version>20190118</fitnesse.version>
-        <hsac.fixtures.version>3.31.3</hsac.fixtures.version>
+        <hsac.fixtures.version>4.0.0</hsac.fixtures.version>
         <surefire.version>2.22.1</surefire.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
@@ -174,7 +174,7 @@
                     <includes>**/*</includes>
                     <excludes>META-INF,META-INF/**</excludes>
                     <includeScope>runtime</includeScope>
-                    <excludeArtifactIds>fitnesse,junit</excludeArtifactIds>
+                    <excludeArtifactIds>fitnesse</excludeArtifactIds>
                     <outputDirectory>${standalone.classpath}</outputDirectory>
                 </configuration>
                 <executions>

@@ -15,10 +15,8 @@ Workaround for https://github.com/unclebob/fitnesse/issues/989
 
 !define TEST_SYSTEM {slim}
 
-The classpath location when working standalone:
+The classpath location:
 !path fixtures
 !path fixtures/*.jar
 
-When developing and changing the fixtures, we will work based on the pom.xml:
-!pomFile ../pom.xml@compile
 *!

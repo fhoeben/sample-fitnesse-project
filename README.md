@@ -10,7 +10,6 @@ The baseline FitNesse installation offers the following features:
 * Run FitNesse tests on a build server, reporting the results in both JUnit XML format and HTML.
 * FitNesse installation for test/fixture developers containing:
     - the fixture base classes (and Selenium drivers for _Chrome_, _Internet Explorer_, _Edge_ and _Firefox_),
-    - Maven classpath plugin (such that tests can use all dependencies from `pom.xml`),
     - HSAC's fitnesse-plugin to add additional Wiki features (random values, calculating relative dates,
       Slim scenarios without need to specify all parameters, Slim scripts that take a screenshot after each step),
     - easy fixture debugging,
@@ -19,7 +18,7 @@ More details can be found on its [GitHub Wiki](https://github.com/fhoeben/hsac-f
 wiki installation](http://localhost:9090/HsacExamples) (see instructions below on how to start in).
 
 ## Running Locally
-To start the wiki locally execute: `mvn clean compile exec:exec`, it can then be accessed at [http://localhost:9090/](http://localhost:9090/).
+To start the wiki locally execute: `mvn clean compile dependency:copy-dependencies exec:exec`, it can then be accessed at [http://localhost:9090/](http://localhost:9090/).
 
 More details on the features of hsac-fitnesse-fixtures, and example tests, can then be accessed at 
 [http://localhost:9090/HsacExamples](http://localhost:9090/HsacExamples).
