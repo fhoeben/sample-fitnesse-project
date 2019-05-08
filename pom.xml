@@ -207,9 +207,9 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.portals.jetspeed-2</groupId>
+                <groupId>nl.praegus</groupId>
                 <artifactId>jetspeed-unpack-maven-plugin</artifactId>
-                <version>2.3.1</version>
+                <version>2.3.2</version>
                 <executions>
                     <execution>
                         <id>copy-hsac-baseline</id>
