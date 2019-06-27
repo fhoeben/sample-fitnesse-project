@@ -1,0 +1,16 @@
+---
+Test
+---
+
+|storyboard      |browser test             |
+|open            |https://www.debilt.nl    |
+|click           |Paspoort aanvragen       |
+|click           |Afspraak maken           |
+|click           |Kies datum               |
+|click           |10                       |
+|click           |Kies tijdstip            |
+|click           |10.05                    |
+|click           |Contactgegevens          |
+|enter           |Pietje Puk|as|Naam       |
+|click           |Controleren              |
+|wait for visible|Dit is een verplicht veld|

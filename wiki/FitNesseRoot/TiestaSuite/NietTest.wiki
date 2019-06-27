@@ -1,0 +1,9 @@
+---
+Test
+---
+
+|storyboard|browser test|
+|open|https://bit.ly/2BQKeC7|
+|click|Niet op klikken|
+|switch to next tab|
+|confirm alert|

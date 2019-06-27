@@ -1,0 +1,15 @@
+---
+Test
+---
+
+|storyboard      |browser test                        |
+|open            |https://bit.ly/2BQKeC7              |
+|click           |Ja. Ik ben een nieuwsgierige tester!|
+|switch to next tab                                   |
+|enter           |Fried              |as|Voornaam     |
+|enter           |Hoeben             |as|Achternaam   |
+|enter           |example@example.com|as|emailadres   |
+|enter           |0612345678         |as|GSM          |
+|click           |Opslaan                             |
+|wait for visible|Tools Overzicht                     |
+|check           |location           |=~/gelukt/      |
