@@ -1,0 +1,19 @@
+|table template  |vul formulier in voor               |
+|click           |Ja. Ik ben een nieuwsgierige tester!|
+|switch to next tab                                   |
+|enter           |@{voornaam}     |as   |Voornaam     |
+|enter           |@{achternaam}   |as   |Achternaam   |
+|enter           |@{emailadres}   |as   |emailadres   |
+|enter           |@{telefoon}     |as   |GSM          |
+|click           |Opslaan                             |
+|wait for visible|Tools Overzicht                     |
+|close tab                                            |
+
+|script|browser test          |
+|open  |https://bit.ly/2BQKeC7|
+
+
+|vul formulier in voor                             |
+|voornaam|achternaam |emailadres        |telefoon  |
+|Fried   |Hoeben     |abc@example.com   |0612345678|
+|Marcel  |Diepenbroek|marcel@example.com|0301234567|
