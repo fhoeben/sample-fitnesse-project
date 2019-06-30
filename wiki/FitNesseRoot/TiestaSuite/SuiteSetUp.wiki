@@ -17,4 +17,3 @@ An [[import table][.FitNesse.UserGuide.WritingAcceptanceTests.SliM.ImportTable]]
 
 |script          |selenium driver setup|
 |start driver for|chrome               |
-|show            |driver description   |
