@@ -1,3 +1,7 @@
+---
+Test
+---
+
 |scenario        |vul formulier in voor _|voornaam, achternaam, emailadres, telefoon|
 |click           |Ja. Ik ben een nieuwsgierige tester!                              |
 |switch to next tab                                                                 |
