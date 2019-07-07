@@ -14,6 +14,7 @@ Workaround for https://github.com/unclebob/fitnesse/issues/989
 !define slim.port {0}
 
 !define TEST_SYSTEM {slim}
+!define ALL_UNCLE_SUITE_SETUPS {true}
 
 The classpath location:
 !path fixtures
