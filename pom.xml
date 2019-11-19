@@ -14,8 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <fitnesse.version>20191110</fitnesse.version>
-        <hsac.fixtures.version>4.7.0</hsac.fixtures.version>
-        <toolchain.plugin.version>1.17</toolchain.plugin.version>
+        <hsac.fixtures.version>4.8.0</hsac.fixtures.version>
         <surefire.version>2.22.1</surefire.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
@@ -196,25 +195,6 @@
                             </artifactItems>
                             <stripVersion>true</stripVersion>
                             <outputDirectory>${project.basedir}/wiki</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-plugins</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>nl.praegus</groupId>
-                                    <artifactId>toolchain-fitnesse-plugin</artifactId>
-                                    <version>${toolchain.plugin.version}</version>
-                                    <classifier>jar-with-dependencies</classifier>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-                            </artifactItems>
-                            <outputDirectory>${project.basedir}/wiki/plugins</outputDirectory>
                         </configuration>
                     </execution>
                     <execution>
