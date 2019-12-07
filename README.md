@@ -1,5 +1,5 @@
 This testing project uses the FitNesse baseline provided by [hsac-fitnesse-fixtures](https://github.com/fhoeben/hsac-fitnesse-fixtures).
-It offers a web environment (wiki) to define and run tests. 
+It offers a web environment (wiki) to define and run tests. It is extended with [Praegus' Toolchain plugin](https://gitlab.com/praegus/toolchain-fixtures/toolchain-fitnesse-plugin), improving the vanilla wiki.
 
 ## Baseline Features
 The hsac-fitnesse-fixtures aim to assist in testing (SOAP) web services and web applications (using Selenium) minimizing the amount of (custom) Java code needed to define tests.
@@ -13,6 +13,9 @@ The baseline FitNesse installation offers the following features:
     - HSAC's fitnesse-plugin to add additional Wiki features (random values, calculating relative dates,
       Slim scenarios without need to specify all parameters, Slim scripts that take a screenshot after each step),
     - easy fixture debugging,
+    - Praegus' toolchain-plugin, improving the wiki's look and feel and page editing features, combining:
+      - [Bootstrap-plus wiki theme](https://github.com/tcnh/fitnesse-bootstrap-plus-theme)
+      - [Autocomplete responder](https://gitlab.com/praegus/toolchain-fixtures/fitnesse-autocomplete-responder)
 
 More details can be found on its [GitHub Wiki](https://github.com/fhoeben/hsac-fitnesse-fixtures/wiki), or [in the local
 wiki installation](http://localhost:9090/HsacExamples) (see instructions below on how to start in).
