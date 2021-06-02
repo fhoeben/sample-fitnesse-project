@@ -19,7 +19,7 @@
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
-        <extraFailsafeListeners>,fitnesse.junit.JUnitXMLPerPageListener</extraFailsafeListeners>
+        <extraFailsafeListeners>,fitnesse.junit.JUnitXMLPerPageRunListener</extraFailsafeListeners>
     </properties>
 
     <dependencies>
