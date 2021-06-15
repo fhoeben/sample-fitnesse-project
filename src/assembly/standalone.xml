@@ -45,7 +45,7 @@
                 <exclude>FitNesseRoot/RecentChanges/**</exclude>
                 <exclude>FitNesseRoot/RecentChanges.wiki</exclude>
                 <exclude>FitNesseRoot/ReRunLastFailures.wiki</exclude>
-                <exclude>FitNesseRoot/RerunLastFailures.wiki</exclude>
+                <exclude>FitNesseRoot/RerunLastFailures*.wiki</exclude>
                 <exclude>FitNesseRoot/TemplateLibrary/**</exclude>
                 <exclude>FitNesseRoot/properties</exclude>
                 <exclude>FitNesseRoot/updateList</exclude>
@@ -62,4 +62,4 @@
             </includes>
         </fileSet>
     </fileSets>
-</assembly> 
+</assembly>
