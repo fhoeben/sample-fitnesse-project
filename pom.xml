@@ -144,12 +144,7 @@
                         <configuration>
                             <executable>java</executable>
                             <workingDirectory>wiki</workingDirectory>
-                            <arguments>
-                                <argument>-jar</argument>
-                                <argument>fitnesse-standalone.jar</argument>
-                                <argument>-p</argument>
-                                <argument>${fitnesse.port}</argument>
-                            </arguments>
+                            <commandlineArgs>-jar fitnesse-standalone.jar -p ${fitnesse.port}</commandlineArgs>
                         </configuration>
                     </execution>
                     <execution>
