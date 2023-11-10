@@ -13,9 +13,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <fitnesse.version>20230503</fitnesse.version>
-        <hsac.fixtures.version>5.2.45</hsac.fixtures.version>
-        <surefire.version>3.1.2</surefire.version>
+        <fitnesse.version>20231029</fitnesse.version>
+        <hsac.fixtures.version>5.3.1</hsac.fixtures.version>
+        <surefire.version>3.2.2</surefire.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
         <fitnesse.port>9090</fitnesse.port>
@@ -52,8 +52,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <release>11</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <showDeprecation>true</showDeprecation>
                 </configuration>
