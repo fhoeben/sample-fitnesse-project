@@ -230,6 +230,10 @@
                         <groupId>nl.hsac</groupId>
                         <artifactId>hsac-fitnesse-fixtures</artifactId>
                         <version>${hsac.fixtures.version}</version>
+                        <!--
+                            To install the webdrivers from Maven Central instead of using the selenium managed drivers,
+                            use `standalone-with-webdrivers`.
+                         -->
                         <classifier>standalone</classifier>
                         <type>zip</type>
                     </dependency>
