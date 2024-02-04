@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <fitnesse.version>20231203</fitnesse.version>
-        <hsac.fixtures.version>5.3.7</hsac.fixtures.version>
+        <hsac.fixtures.version>5.3.10</hsac.fixtures.version>
         <surefire.version>3.2.3</surefire.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
         <standalone.classpath>wiki/fixtures</standalone.classpath>
@@ -281,7 +281,7 @@
                                     <executable>/bin/bash</executable>
                                     <arguments>
                                         <argument>-c</argument>
-                                        <argument>chmod +x ${project.basedir}/wiki/webdrivers/*</argument>
+                                        <argument>[ -d "${project.basedir}/wiki/webdrivers" ] &amp;&amp; chmod +x ${project.basedir}/wiki/webdrivers/* || true</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
