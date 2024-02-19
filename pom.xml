@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <fitnesse.version>20231203</fitnesse.version>
+        <fitnesse.version>20240219</fitnesse.version>
         <hsac.fixtures.version>5.3.10</hsac.fixtures.version>
         <surefire.version>3.2.5</surefire.version>
         <!-- classpath that Fitnesse uses when not starting from IDE/maven -->
